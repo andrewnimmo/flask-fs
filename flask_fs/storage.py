@@ -6,7 +6,8 @@ import os.path
 
 from flask import current_app, url_for, request, abort
 from six.moves.urllib.parse import urljoin
-from werkzeug import secure_filename, FileStorage, cached_property
+from werkzeug.utils import secure_filename, cached_property
+from werkzeug.datastructures import FileStorage
 
 from .errors import UnauthorizedFileType, FileExists, OperationNotSupported, FileNotFound
 from .files import DEFAULTS, extension, lower_extension
